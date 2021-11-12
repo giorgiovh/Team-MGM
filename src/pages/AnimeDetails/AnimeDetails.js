@@ -23,7 +23,7 @@ class AnimeDetails extends Component {
         };
 
         // the path is /api/favorites because our server.js has app.use('/api/favorites', favoritesRouter)
-        fetch('http://localhost:3001/api/favorites', {
+        fetch('https://anime-city-mgm.herokuapp.com/api/favorites', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
