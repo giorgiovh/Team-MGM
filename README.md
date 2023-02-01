@@ -4,7 +4,7 @@
 
 ## Getting started
 
-[Click here to visit Anime City!](https://anime-city-project.herokuapp.com/)
+[Click here to visit Anime City!](https://anime-city.web.app/)
 
 
 ***
