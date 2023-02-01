@@ -12,7 +12,7 @@ function AnimeItem(props) {
                 }}
             >
                 <h3>{props.anime.title}</h3>
-                <img src={props.anime.image_url} alt="" />
+                <img src={props.anime.images.jpg.image_url} alt="" />
             </Link>
         </div>
     );

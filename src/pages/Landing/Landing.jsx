@@ -8,7 +8,6 @@ class Landing extends Component {
   }
 
   componentDidMount() {
-    // fetch('https://api.jikan.moe/v3/top/anime')
     fetch('https://api.jikan.moe/v4/top/anime')
       .then(res => res.json())
       .then(json => {
