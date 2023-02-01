@@ -1,9 +1,9 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import UpdateReview from '../UpdateReview/UpdateReview';
-import * as reviewsService from '../../services/reviews';
+// import UpdateReview from '../UpdateReview/UpdateReview';
+// import * as reviewsService from '../../services/reviews';
 
 class Review extends Component {
     state = {
@@ -15,16 +15,12 @@ class Review extends Component {
     };
     formRef = React.createRef();
 
-    // componentDidMount() {
-    //     this.fetchReviews();
-    // }
-
     componentDidMount() {
         this.fetchReviews()
     }
 
     fetchReviews() {
-        fetch('http://localhost:3000/api/reviews')
+        fetch('http://localhost:3001/api/reviews')
             .then(res => res.json())
             .then(json => this.setState({
                 reviews: json
