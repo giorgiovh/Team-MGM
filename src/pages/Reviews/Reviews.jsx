@@ -24,7 +24,7 @@ class Review extends Component {
     }
 
     fetchReviews() {
-        fetch('http://localhost:3001/api/reviews')
+        fetch('http://localhost:3000/api/reviews')
             .then(res => res.json())
             .then(json => this.setState({
                 reviews: json
