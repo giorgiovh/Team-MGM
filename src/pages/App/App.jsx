@@ -21,7 +21,8 @@ class App extends Component {
 	constructor() {
 		super()
 		this.state = {
-			baseURL: 'https://api.jikan.moe/v3/search/anime?',
+			// baseURL: 'https://api.jikan.moe/v3/search/anime?',
+			baseURL: 'https://api.jikan.moe/v4/anime?',
 			query: 'q=',
 			animeTitle: '',
 			limit: "&limit=6",
@@ -63,7 +64,7 @@ class App extends Component {
 		})
 		// our results are only displayed on '/' so we'll only see our results if we're on '/'. If we're searching while we are on '/anime', we need to redirect to '/' after submitting so we can see our results
 		if (this.props.history.location.pathname === '/') {
-			console.log('home');
+			// console.log('home');
 		} else {
 			this.props.history.push('/')
 		}

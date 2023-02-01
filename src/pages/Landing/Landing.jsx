@@ -8,12 +8,14 @@ class Landing extends Component {
   }
 
   componentDidMount() {
-    fetch('https://api.jikan.moe/v3/top/anime')
+    // fetch('https://api.jikan.moe/v3/top/anime')
+    fetch('https://api.jikan.moe/v4/top/anime')
       .then(res => res.json())
       .then(json => {
           this.setState({
-            topAnimes: json.top.slice(0, 9)
+            topAnimes: json.data.slice(0, 9)
           });
+          console.log('top/anime json is: ', json);
       })
       .catch(err => console.log(err));
   }
