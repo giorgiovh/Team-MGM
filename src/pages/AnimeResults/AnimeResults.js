@@ -6,7 +6,7 @@ class AnimeResults extends Component {
     render() {
         return (
             <>
-                {this.props.animes.map((anime, idx) => (
+                {this.props.animes && this.props.animes.map((anime, idx) => (
                     <AnimeItem anime={anime} key={idx} />
                 ))}
             </>
