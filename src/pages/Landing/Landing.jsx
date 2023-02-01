@@ -24,7 +24,7 @@ class Landing extends Component {
       <main className={styles.container}>
         <h1>{this.props.user ? `Welcome to Anime City, ${this.props.user.name}!` : 'Welcome to Anime City!'}</h1>
         <h2>{this.props.animes ? '' : 'Top Animes'}</h2>
-        {this.props.animes ? <AnimeResults animes={this.props.animes.results} /> : <AnimeResults animes={this.state.topAnimes} />}
+        {this.props.animes ? <AnimeResults animes={this.props.animes} /> : <AnimeResults animes={this.state.topAnimes} />}
       </main>
     );
   }

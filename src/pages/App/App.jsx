@@ -56,10 +56,15 @@ class App extends Component {
 		}, () => {
 			fetch(this.state.searchURL)
 				.then(res => res.json())
-				.then(json => this.setState({
-					animes: json,
-					animeTitle: ''
-				}))
+				.then(
+					json => {
+						this.setState({
+							animes: json.data,
+							animeTitle: ''
+						})
+						console.log('search json', json.data)``
+					}
+				)
 				.catch(err => console.log(err))
 		})
 		// our results are only displayed on '/' so we'll only see our results if we're on '/'. If we're searching while we are on '/anime', we need to redirect to '/' after submitting so we can see our results
@@ -74,10 +79,10 @@ class App extends Component {
 		const updatedReview = await reviewsService.update(updatedReviewData);
 		console.log(updatedReview);
 		const newReviewsArray = this.state.reviews.map(review => review._id === updatedReview._id ? updatedReview : review);
-        this.setState(
-            { reviews: newReviewsArray},
-            // () => this.props.history.push('/')
-        );
+		this.setState(
+			{ reviews: newReviewsArray },
+			// () => this.props.history.push('/')
+		);
 	}
 
 	render() {
@@ -101,10 +106,10 @@ class App extends Component {
 				</Form.Group>
 
 				<Route exact path='/update' render={({ location }) =>
-					<UpdateReview 
-						history = {this.props.history}
+					<UpdateReview
+						history={this.props.history}
 						handleUpdateReview={this.handleUpdateReview}
-						location={location} 
+						location={location}
 					/>
 				} />
 
